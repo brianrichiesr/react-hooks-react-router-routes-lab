@@ -1,14 +1,20 @@
 import { movies } from "../data";
+import NavBar from "../components/NavBar";
+import MovieCard from "../components/MovieCard";
+import { v4 as uuid } from "uuid";
 
 function Home() {
 
   return (
     <>
       <header>
-        {/* What component should go here? */}
+        <NavBar />
       </header>
       <main>
-        {/* Info goes here! */}
+        <h1>Home Page</h1>
+        {movies.map(movie => {
+          return <MovieCard key={uuid()} title={movie.title} />
+        })}
       </main>
     </>
   );
